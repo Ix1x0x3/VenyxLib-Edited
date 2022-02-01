@@ -144,9 +144,9 @@ do
 	end
 	
 	function utility:KeyPressed() -- yield until next key is pressed
-		local key = input.InputBegan:Wait()
+		local key, x = input.InputBegan:Wait()
 		
-		while key.UserInputType ~= Enum.UserInputType.Keyboard	 do
+		while key.UserInputType ~= Enum.UserInputType.Keyboard and not x do
 			key = input.InputBegan:Wait()
 		end
 		
@@ -1988,10 +1988,6 @@ do
 			Position = position[value]
 		}, 0.1)
 	end
-  
-  function section:Destroy()
-    return self:Destroy()
-  end
 	
 	function section:updateTextbox(textbox, title, value)
 		textbox = self:getModule(textbox)
@@ -2172,5 +2168,5 @@ do
 	end
 end
 
-print("dino was here :\)")
+print("dino and Ix1x0x3 was here :\)")
 return library
